@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Search with AJAX</title>
+    </head>
+    <body>
+        <h1>Student Name Search</h1>
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Type student name..."
+            autocomplete="off"
+        />
+        <div id="suggestions"></div>
+
+        <script>
+            document
+                .getElementById("studentName")
+                .addEventListener("input", function () {
+                    const query = this.value;
+
+                    if (query.length === 0) {
+                        document.getElementById("suggestions").style.display =
+                            "none";
+                        return;
+                    }
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open(
+                        "GET",
+                        "data.php?name=" + encodeURIComponent(query),
+                        true,
+                    );
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            const results = JSON.parse(xhr.responseText);
+                            displaySuggestions(results);
+                        }
+                    };
+
+                    xhr.send();
+                });
+
+            function displaySuggestions(results) {
+                const suggestionsBox = document.getElementById("suggestions");
+                suggestionsBox.innerHTML = ""; // Clear previous suggestions
+
+                if (results.length > 0) {
+                    results.forEach(function (result) {
+                        const suggestionItem = document.createElement("div");
+                        suggestionItem.className = "suggestion-item";
+                        suggestionItem.textContent = result;
+                        suggestionItem.onclick = function () {
+                            document.getElementById("studentName").value =
+                                result;
+                            suggestionsBox.style.display = "none";
+                        };
+                        suggestionsBox.appendChild(suggestionItem);
+                    });
+                    suggestionsBox.style.display = "block"; // Show suggestions
+                } else {
+                    suggestionsBox.style.display = "none"; // Hide if no results
+                }
+            }
+        </script>
+    </body>
+</html>
