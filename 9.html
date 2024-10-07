@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pop the Bubbles Game</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: whitesmoke;
+                overflow: hidden;
+                font-family: Arial, sans-serif;
+            }
+
+            .bubble {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: #3498db;
+                color: white;
+                text-align: center;
+                line-height: 100px;
+                font-size: 50px;
+            }
+            h2 {
+                font-size: 70px;
+            }
+            p {
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Pop the Bubbles Game</h2>
+        <p>Score: <span id="score">0</span></p>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                var score = 0;
+                var width = screen.width - 100;
+                var height = screen.height - 200;
+
+                function generateRandomLetter() {
+                    var keyCode = Math.floor(Math.random() * 26) + 65; // Random key code for A-Z
+                    return String.fromCharCode(keyCode);
+                }
+
+                function generateRandomColor() {
+                    var letters = "0123456789ABCDEF";
+                    var color = "#";
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+
+                function createBubble() {
+                    var letter = generateRandomLetter();
+                    var left = Math.random() * width;
+                    var color = generateRandomColor();
+
+                    var $bubble = $("<div class='bubble'></div>")
+                        .text(letter)
+                        .css("left", left)
+                        .css("background-color", color);
+
+                    $("body").append($bubble);
+
+                    $bubble.animate(
+                        { top: height },
+                        5000,
+                        "linear",
+                        function () {
+                            $(this).remove();
+                        },
+                    );
+
+                    $bubble.click(function () {
+                        score++;
+                        $("#score").text(score);
+                        $(this).remove();
+                    });
+                }
+
+                $(document).keypress(function (e) {
+                    var letter = String.fromCharCode(e.which).toUpperCase();
+                    $(".bubble").each(function () {
+                        if ($(this).text() === letter) {
+                            score = score + 1000000;
+                            $("#score").text(score);
+                            $(this).remove();
+                        }
+                    });
+                });
+
+                setInterval(createBubble, 2000);
+            });
+        </script>
+    </body>
+</html>
