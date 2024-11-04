@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Banking Application - Home</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+        <style>
+            body {
+                font-family: "Arial", sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #e0e0e0;
+                padding: 15px 30px;
+                color: #353e43;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .navbar .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .navbar nav {
+                display: flex;
+                gap: 20px;
+            }
+            .navbar nav a {
+                color: #353e43;
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+            .navbar nav a:hover {
+                color: #1a2e3c;
+            }
+            .hero {
+                background: url("https://example.com/hero-image.jpg") no-repeat
+                    center center;
+                background-size: cover;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                text-align: center;
+                padding: 0 20px;
+            }
+            .hero h1 {
+                font-size: 48px;
+                margin: 0;
+                font-weight: bold;
+            }
+            .hero p {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+            .hero a {
+                text-decoration: none;
+                background-color: #1a2e3c;
+                color: #fff;
+                padding: 15px 30px;
+                font-size: 18px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            .hero a:hover {
+                background-color: #2e3b4e;
+            }
+            .features {
+                padding: 50px 20px;
+                text-align: center;
+            }
+            .features h2 {
+                font-size: 36px;
+                color: DarkSlateGrey;
+                margin-bottom: 20px;
+            }
+            .features .feature {
+                display: inline-block;
+                width: 30%;
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 10px;
+            }
+            .features .feature i {
+                font-size: 40px;
+                color: #1a2e3c;
+                margin-bottom: 10px;
+            }
+            .features .feature h3 {
+                font-size: 24px;
+                margin: 10px 0;
+            }
+            .features .feature p {
+                font-size: 16px;
+            }
+            .footer {
+                background-color: #2e3b4e;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">
+                <span style="color: green; font-size: 30px"></span> Dingus Bank
+            </div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="index.php">Register</a>
+                <a href="login.php">Login</a>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div>
+                <h1 style="color: green">Welcome to Banking App</h1>
+                <p style="color: green">
+                    Your secure and easy way to manage your finances
+                </p>
+                <a href="index.php">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <h2>Our Features</h2>
+            <div class="feature">
+                <i class="fas fa-wallet"></i>
+                <h3>Easy Transactions</h3>
+                <p>Quick and secure transactions at your fingertips.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>High Security</h3>
+                <p>State-of-the-art security to keep your data safe.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-calendar-check"></i>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer support for all your needs.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Banking App. All rights reserved.</p>
+        </div>
+    </body>
+</html>

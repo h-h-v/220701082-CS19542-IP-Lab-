@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function check() {
+			var name = document.getElementsByName('name')[0].value;
+			var pass = document.getElementsByName('pass')[0].value;
+
+			if (name === "admin" && pass === "123") {
+				window.location.href = "index.html";
+				return false; // Prevent form submission, as we are manually redirecting
+			} else {
+				alert("Invalid username or password");
+				return false; // Prevent form submission if login fails
+			}
+		}
+	</script>
+	<style>
+		form {
+			padding-left: 40%;
+			padding-top: 15%;
+		}
+
+		input {
+			font-size: 30px;
+		}
+
+		h1 {
+			position: absolute;
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="color:#1A4870;"><i>Login</i></h1>
+	<h1 style="color:#1F316F;top:5px;left:5px;"><i>Login</i></h1>
+	<h1 style="color:#5B99C2;top:10px;left:10px;"><i>Login</i></h1>
+	<form onsubmit="return check()">
+		<input type="text" placeholder="Username" name="name" required>
+		<br />
+		<input type="password" placeholder="Password" name="pass" required>
+		<br />
+		<input type="submit">
+	</form>
+</body>
+
+</html>

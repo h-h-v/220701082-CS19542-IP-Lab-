@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating WhatsApp Button</title>
+    <style>
+        /* Style for the WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .whatsapp-float .whatsapp-icon {
+            margin-top: 16px; /* Center the icon vertically */
+        }
+
+        /* Add hover effect */
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            cursor: pointer;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button with descriptive text for accessibility -->
+    <a href="https://wa.me/1234567890?text=Hello, I need assistance!" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+        <i class="fa fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+        <span class="sr-only">Chat with us on WhatsApp</span>
+    </a>
+
+    <!-- Include Font Awesome for the WhatsApp icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>

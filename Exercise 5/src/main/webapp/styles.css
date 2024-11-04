@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body,
+form {
+	font-family: JetBrainsMono;
+	color: black;
+	background-color: white;
+}
+
+input {
+	font-family: JetBrainsMono;
+	color: black;
+	background-color: white;
+}
+
+button {
+	font-family: JetBrainsMono;
+	background-color: white;
+	font-size: 30px;
+	text-align: centre;
+	margin-top: 10%;
+	color: black;
+}
+
+h1 {
+	position: absolute;
+	margin: 0;
+}
