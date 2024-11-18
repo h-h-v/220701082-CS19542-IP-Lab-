@@ -1,0 +1,45 @@
+a{
+    font-size: 30px;
+    text-decoration: none;     
+}
+li{
+    padding-bottom: 20px;
+}
+ul{
+    background-color: grey;
+    text-decoration: none;
+    list-style-type: none;
+    width: 20%;
+    height: 500px;
+    float: left;
+}
+/* unvisited link */
+a:link {
+    color:  purple;
+  }
+  
+  /* visited link */
+a:visited {
+    color: purple;
+  }
+  
+  /* mouse over link */
+a:hover {
+    background-color: white;
+  }
+  
+  /* selected link */
+a:active {
+    background-color: white;
+  }
+p{
+    float:none;
+    font-size:30px;
+}
+#content{
+    float:left;
+}
+th,td{
+background-color:grey;
+border:solid;
+}
